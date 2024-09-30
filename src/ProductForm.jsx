@@ -22,7 +22,7 @@ const ProductForm = () => {
                 ))}
             </select><br></br>
             <label>Quantity: </label>
-            <button onClick={() => setQuantity(quantity - 1)}>-</button>
+            <button onClick={() => setQuantity(Math.max(quantity  - 1, 0))}>-</button>
             <span>{quantity}</span>
             <button onClick={() => setQuantity(quantity + 1)}>+</button>
         </>
