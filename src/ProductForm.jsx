@@ -1,29 +1,25 @@
 import React from 'react';
 
-class ProductForm extends React.Component {
-    
-    render() {
+const ProductForm = () => {
     const productsList = [
-        {productName: 'tv', productPrice: 789},
-        {productName: 'telephone', productPrice: 240},
-        {productName: 'computer', productPrice: 1000}
+        { productName: 'tv', productPrice: 789 },
+        { productName: 'telephone', productPrice: 240 },
+        { productName: 'computer', productPrice: 1000 }
     ];
-    
 
-        return (
-            <>
+    return (
+        <>
             <h3>Select product</h3>
             <label>Product: </label>
             <select>
-                {productsList.map( product => (
-                    <option value={product.productName}>
-                        {product.productName} ({product.productPrice}€)
+                {productsList.map(product => (
+                    <option key={product.productName} value={product.productName}>
+                        {product.productName} ({product.productPrice}€) {/* Shows on UI */}
                     </option>
-                ))}    
+                ))}
             </select>
-            </>
-        );
-    }
+        </>
+    );
 }
 
 export default ProductForm;
