@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from "react";
+import OrderInfo from './OrderInfo';
 
 const ProductForm = () => {
     const productsList = [
@@ -8,6 +9,7 @@ const ProductForm = () => {
         { productName: 'computer', productPrice: 1000 }
     ];  
     
+ 
     const [quantity, setQuantity] = useState(0);
 
     return (
