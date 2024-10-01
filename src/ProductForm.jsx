@@ -9,14 +9,17 @@ const ProductForm = () => {
         { productName: 'computer', productPrice: 1000 }
     ];  
     
- 
+    const [selectedProduct, setSelectedProduct] = useState(productsList[0]);
     const [quantity, setQuantity] = useState(0);
 
     return (
         <>
             <h3>Select product</h3>
             <label>Product: </label>
-            <select>
+            <select onChange={(e) => {
+                const product = productsList.find(p => p.productName === e.target.value);
+                setSelectedProduct(product);
+            }}>
                 {productsList.map(product => (
                     <option key={product.productName} value={product.productName}>
                         {product.productName} ({product.productPrice}€) {/* Shows on UI */}
@@ -27,6 +30,9 @@ const ProductForm = () => {
             <button onClick={() => setQuantity(Math.max(quantity  - 1, 0))}>-</button>
             <span>{quantity}</span>
             <button onClick={() => setQuantity(quantity + 1)}>+</button>
+            <OrderInfo productName={selectedProduct.productName}
+            productPrice={selectedProduct.productPrice}
+            quantity={quantity}></OrderInfo>
         </>
     );
 }
