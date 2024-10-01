@@ -6,7 +6,7 @@ const OrderInfo = ({ productName, productPrice, quantity }) => {
     return (
         <div>
             <h3>Order info</h3>
-            <table>
+            <table class='tb' id="styling">
                 <thead>
                     <tr>
                         <th>Product</th>
