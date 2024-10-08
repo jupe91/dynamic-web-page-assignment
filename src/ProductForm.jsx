@@ -9,11 +9,12 @@ const ProductForm = () => {
         { productName: 'computer', productPrice: 1000 }
     ];  
     
+    // state handling 
     const [selectedProduct, setSelectedProduct] = useState(productsList[0]);
     const [quantity, setQuantity] = useState(0);
 
     return (
-        <>
+        <div>
             <h3>Select product</h3>
             <label>Product: </label>
             <select onChange={(e) => {
@@ -33,7 +34,7 @@ const ProductForm = () => {
             <OrderInfo productName={selectedProduct.productName}
             productPrice={selectedProduct.productPrice}
             quantity={quantity}></OrderInfo>
-        </>
+        </div>
     );
 }
 
