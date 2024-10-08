@@ -2,6 +2,7 @@ import './index.css'
 import dogPicture from '/dog.jpg'
 import getHeader from './Header'
 import ProductForm from './ProductForm'
+import OpenData from './OpenData'
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
     <>
       {getHeader(dogPicture)}
       <ProductForm/>
+      <OpenData/>
     </>
   )
 }
