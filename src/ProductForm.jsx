@@ -15,7 +15,7 @@ const ProductForm = () => {
     const [quantity, setQuantity] = useState(0);
 
     return (
-        <>
+        <div>
             <h3>Select product</h3>
             {/* Dropdown to select a product, updating the selectedProduct state based on user selection */}
             <label>Product: </label>
@@ -38,7 +38,7 @@ const ProductForm = () => {
             <OrderInfo productName={selectedProduct.productName}
             productPrice={selectedProduct.productPrice}
             quantity={quantity}></OrderInfo>
-        </>
+        </div>
     );
 }
 

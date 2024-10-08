@@ -1,4 +1,4 @@
-import './App.css'
+import './index.css'
 import dogPicture from '/dog.jpg'
 import getHeader from './Header'
 import ProductForm from './ProductForm'
