@@ -22,6 +22,8 @@ const OpenData = () => {
     return (
         <div>
             <h1>Random Beer</h1>
+            {/* Check if beerData is available before rendering */}
+            {beerData && (
                 <div>
                     <p><strong>Brand:</strong> {beerData.brand}</p>
                     <p><strong>Name:</strong> {beerData.name}</p>
@@ -29,6 +31,7 @@ const OpenData = () => {
                     <p><strong>Malts:</strong> {beerData.malts}</p>
                     <p><strong>Alcohol Content:</strong> {beerData.alcohol}%</p>
                 </div>
+            )}
             <button onClick={getData}>Get Another Beer</button>
         </div>
     );
