@@ -4,8 +4,9 @@ const OpenData = () => {
 
     const url = 'https://random-data-api.com/api/v2/beers';
     
-    // State variables to hold beer data
+    // State variables to hold beer data , and alcohol servings
     const [beerData, setBeerData] = useState(null);
+    const [alcoholServings, setAlcoholServings] = useState(0);
 
     // Function to fetch beer data
     const getData = async () => {
@@ -19,7 +20,7 @@ const OpenData = () => {
         getData();
     }, []);
 
-    return (
+   return (
         <div>
             <h1>Random Beer</h1>
             {/* Check if beerData is available before rendering */}
@@ -30,6 +31,7 @@ const OpenData = () => {
                     <p><strong>Style:</strong> {beerData.style}</p>
                     <p><strong>Malts:</strong> {beerData.malts}</p>
                     <p><strong>Alcohol Content:</strong> {beerData.alcohol}%</p>
+                    <p><strong>Alcohol Servings:</strong> {alcoholServings} servings</p>
                 </div>
             )}
             <button onClick={getData}>Get Another Beer</button>
