@@ -13,6 +13,12 @@ const OpenData = () => {
             const response = await fetch(url);
             const json = await response.json();
             setBeerData(json);
+
+            
+            // Converts the alcohol percentage from a string to a number
+            const alcohol = parseFloat(json.alcohol.replace('%', '')); 
+            const servings = (alcohol / 5).toFixed(2); // 5% alcohol = 1 serving
+            setAlcoholServings(servings);
     };
 
     // Fetch beer data when component loads
