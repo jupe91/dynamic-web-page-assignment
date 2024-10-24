@@ -1,16 +1,18 @@
 import './index.css'
-import dogPicture from '/dog.jpg'
-import getHeader from './Header'
-import ProductForm from './ProductForm'
+import Product from './Product'
 import OpenData from './OpenData'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
 
   return (
     <>
-      {getHeader(dogPicture)}
-      <ProductForm/>
-      <OpenData/>
+    <BrowserRouter>
+      <Routes>
+          <Route index element={<Product />} />
+          <Route path="opendata" element={<OpenData />} />
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
